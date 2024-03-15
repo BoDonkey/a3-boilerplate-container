@@ -1,0 +1,48 @@
+diff --git a/app.js b/app.js
+index 0b747e8..9c0eb11 100644
+--- a/app.js
++++ b/app.js
+@@ -1,5 +1,5 @@
+ require('apostrophe')({
+-  shortName: 'a3-boilerplate',
++  shortName: 'kosarin-a3-boilerplate',
+   modules: {
+     // Apostrophe module configuration
+     // *******************************
+@@ -29,6 +29,8 @@ require('apostrophe')({
+     // `asset` supports the project's webpack build for client-side assets.
+     asset: {},
+     // The project's first custom page type.
+-    'default-page': {}
++    'default-page': {},
++    '@apostrophecms/event': {},
++    '@apostrophecms/event-page': {}
+   }
+ });
+diff --git a/modules/@apostrophecms/page/index.js b/modules/@apostrophecms/page/index.js
+index 7f97c4e..ed7c776 100644
+--- a/modules/@apostrophecms/page/index.js
++++ b/modules/@apostrophecms/page/index.js
+@@ -11,6 +11,10 @@ module.exports = {
+       {
+         name: '@apostrophecms/home-page',
+         label: 'Home'
++      },
++      {
++        name: '@apostrophecms/event-page',
++        label: 'Event'
+       }
+     ]
+   }
+diff --git a/package.json b/package.json
+index 40a9bb8..452e777 100644
+--- a/package.json
++++ b/package.json
+@@ -40,6 +40,7 @@
+   "author": "Apostrophe Technologies, Inc.",
+   "license": "MIT",
+   "dependencies": {
++    "@apostrophecms/event": "^1.0.1",
+     "apostrophe": "^4.0.0",
+     "normalize.css": "^8.0.1"
+   },

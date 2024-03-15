@@ -1,0 +1,10 @@
+{% extends data.outerLayout %}
+{% set timezone = data.timezone %}
+{% block title %}{{ data.piece.title }}{% endblock %}
+
+{% block main %}
+  <h1>{{ data.piece.title }}</h1>
+  <p>
+    {{ data.piece.start | localizeDate('MMMM D', data.piece.allDay, timezone) }} at {{ data.piece.start | localizeDate('h:mma', data.piece.allDay, timezone) }}
+  </p>
+{% endblock %}
