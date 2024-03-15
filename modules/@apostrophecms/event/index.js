@@ -20,6 +20,7 @@ module.exports = {
   methods(self) {
     return {
       denormalizeDatesAndTimes(piece) {
+        console.log('denormalizeDatesAndTimes called!', process.env.TIMEZONE);
         dayjs.extend(utc);
         // Parse our dates and times
         let startTime = piece.startTime;
